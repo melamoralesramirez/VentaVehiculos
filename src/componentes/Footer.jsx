@@ -34,13 +34,13 @@ export default function Footer() {
 
                         <div className="flex items-center gap-3 mb-3 justify-center">
                             <a href="https://wa.me/50600000000" target="_blank" rel="noreferrer">
-                                <img src="/WhatsApp.png" alt="WhatsApp" className="h-7 w-7 hover:scale-110 transition" />
+                                <img src="/redes/WhatsApp.png" alt="WhatsApp" className="h-7 w-7 hover:scale-110 transition" />
                             </a>
                             <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                                <img src="/Instragram.png" alt="Instagram" className="h-7 w-7 hover:scale-110 transition" />
+                                <img src="/redes/Instragram.png" alt="Instagram" className="h-7 w-7 hover:scale-110 transition" />
                             </a>
                             <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                                <img src="/Facebook.png" alt="Facebook" className="h-7 w-7 hover:scale-110 transition" />
+                                <img src="/redes/Facebook.png" alt="Facebook" className="h-7 w-7 hover:scale-110 transition" />
                             </a>
                         </div>
 

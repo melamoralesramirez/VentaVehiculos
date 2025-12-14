@@ -1,23 +1,66 @@
 export const vehiculos = [
   {
     id: 1,
-    name: "Toyota Corolla",
-    year: 2018,
-    price: 11500,
-    image: "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=60"
+
+    // Identidad
+    marca: "Toyota",
+    modelo: "Corolla",
+    anio: 2018,
+
+    // Precio / uso
+    precio: 11500,        // número (sin símbolos) para poder ordenar/filtrar
+    kilometraje: 85000,   // número
+
+    // Mecánica
+    transmision: "Automática",
+    combustible: "Gasolina",
+    motor: "1.8L",
+    traccion: "FWD",
+
+    // Estado y carrocería
+    color: "Blanco",
+    estado: "Excelente",       // Excelente | Bueno | Regular | Nuevo
+    puertas: 4,
+    origen: "Importado",       // Importado | Nacional
+
+    // Media
+    imagen: "/vehiculos/vehiculo1.jpg", // recomendado: guardarlas en public/vehiculos/
+
+    // Detalles para la página del carro
+    descripcion: "Sedán económico y confiable, ideal para ciudad.",
+    caracteristicas: [
+      "A/C",
+      "Bluetooth",
+      "Cámara reversa",
+      "Pantalla táctil",
+      "Rines de lujo",
+      "Sensores de parqueo",
+    ],
   },
+
   {
     id: 2,
-    name: "Honda Civic",
-    year: 2019,
-    price: 13200,
-    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c8?auto=format&fit=crop&w=1200&q=60"
+    marca: "Honda",
+    modelo: "Civic",
+    anio: 2019,
+    precio: 13200,
+    kilometraje: 72000,
+    transmision: "Automática",
+    combustible: "Gasolina",
+    motor: "2.0L",
+    traccion: "FWD",
+    color: "Gris",
+    estado: "Muy bueno",
+    puertas: 4,
+    origen: "Nacional",
+    imagen: "/vehiculos/vehiculo2.jpg",
+    descripcion: "Diseño deportivo, cómodo y con buen rendimiento.",
+    caracteristicas: [
+      "A/C",
+      "Cruise control",
+      "Bluetooth",
+      "Cámara reversa",
+      "Llantas nuevas",
+    ],
   },
-  {
-    id: 3,
-    name: "Nissan X-Trail",
-    year: 2017,
-    price: 14500,
-    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=60"
-  }
 ]

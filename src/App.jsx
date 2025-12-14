@@ -3,6 +3,7 @@ import Navbar from './componentes/Navbar'
 import Footer from './componentes/Footer'
 
 import Vehiculos from './paginas/Vehiculos'
+import VehiculoDetalle from './paginas/VehiculoDetalle'
 import Promociones from './paginas/Promociones'
 import Contacto from './paginas/Contacto'
 import Ubicacion from './paginas/Ubicacion'
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/" element={<Navigate to="/vehiculos" replace />} />
 
             <Route path="/vehiculos" element={<Vehiculos />} />
+            <Route path="/vehiculos/:id" element={<VehiculoDetalle  />} />
             <Route path="/promociones" element={<Promociones />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/ubicacion" element={<Ubicacion />} />

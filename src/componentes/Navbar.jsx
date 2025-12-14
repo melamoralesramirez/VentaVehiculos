@@ -49,7 +49,7 @@ export default function Navbar() {
             aria-label="WhatsApp"
           >
             <img
-              src="/WhatsApp.png"
+              src="/redes/WhatsApp.png"
               alt="WhatsApp"
               className="h-8 w-8 hover:scale-110 transition"
             />
@@ -62,7 +62,7 @@ export default function Navbar() {
             aria-label="Facebook"
           >
             <img
-              src="/Facebook.png"
+              src="/redes/Facebook.png"
               alt="Facebook"
               className="h-8 w-8 hover:scale-110 transition"
             />
@@ -75,7 +75,7 @@ export default function Navbar() {
             aria-label="Instagram"
           >
             <img
-              src="/Instragram.png"
+              src="/redes/Instragram.png"
               alt="Instagram"
               className="h-8 w-8 hover:scale-110 transition"
             />
