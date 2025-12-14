@@ -20,7 +20,7 @@ export default function Footer() {
 
           {/* Columna 2: Redes + WhatsApp */}
           <div className="flex flex-col items-center">
-            <h4 className="text-sm font-semibold mb-3">Contacto</h4>
+            <h4 className="text-sm font-semibold mb-3">Contactos</h4>
 
             {/* Redes */}
             <div className="flex items-center gap-4 mb-4">
@@ -43,7 +43,7 @@ export default function Footer() {
 
             {/* WhatsApp 1 */}
             <a
-              href="https://wa.me/50688888888"
+              href="https://wa.me/50684944394"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 mb-2 hover:text-white transition"

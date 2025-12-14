@@ -21,7 +21,7 @@ export default function CardVehiculo({ vehiculo }) {
           </p>
 
           <p className="mt-2 font-bold text-[#B68C5A] text-lg">
-            ${vehiculo.precio.toLocaleString()}
+            ₡{vehiculo.precio.toLocaleString()}
           </p>
         </div>
 

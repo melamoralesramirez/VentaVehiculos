@@ -22,7 +22,6 @@ export default function Navbar() {
           {[
             ["Vehículos", "/vehiculos"],
             ["Promociones", "/promociones"],
-            ["Contactos", "/contacto"],
             ["Ubicación", "/ubicacion"],
             ["Vehículos Vendidos", "/vendidos"],
             ["Clientes", "/clientes"],

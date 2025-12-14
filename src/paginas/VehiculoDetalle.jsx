@@ -26,7 +26,7 @@ export default function VehiculoDetalle() {
         </h1>
 
         <p className="text-2xl font-semibold text-[#B68C5A] mb-4">
-          ${vehiculo.precio.toLocaleString()}
+          ₡{vehiculo.precio.toLocaleString()}
         </p>
 
         <p className="text-gray-700 mb-6">

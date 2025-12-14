@@ -5,7 +5,6 @@ import Footer from './componentes/Footer'
 import Vehiculos from './paginas/Vehiculos'
 import VehiculoDetalle from './paginas/VehiculoDetalle'
 import Promociones from './paginas/Promociones'
-import Contacto from './paginas/Contacto'
 import Ubicacion from './paginas/Ubicacion'
 import Vendidos from './paginas/Vendidos'
 import Clientes from './paginas/Clientes'
@@ -23,7 +22,6 @@ export default function App() {
             <Route path="/vehiculos" element={<Vehiculos />} />
             <Route path="/vehiculos/:id" element={<VehiculoDetalle  />} />
             <Route path="/promociones" element={<Promociones />} />
-            <Route path="/contacto" element={<Contacto />} />
             <Route path="/ubicacion" element={<Ubicacion />} />
             <Route path="/vendidos" element={<Vendidos />} />
             <Route path="/clientes" element={<Clientes />} />
