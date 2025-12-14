@@ -92,7 +92,7 @@ export default function Vehiculos() {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div>
             <p className="text-xs font-semibold tracking-widest text-black/50 uppercase">
-              Autos Doña Carmen
+              Nombre negocio
             </p>
             <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-black">
               Vehículos disponibles
