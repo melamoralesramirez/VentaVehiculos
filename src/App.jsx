@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './componentes/Navbar'
 import Footer from './componentes/Footer'
 
+import Inicio from './paginas/Inicio'
 import Vehiculos from './paginas/Vehiculos'
 import VehiculoDetalle from './paginas/VehiculoDetalle'
 import Promociones from './paginas/Promociones'
@@ -17,7 +18,7 @@ export default function App() {
         <Navbar />
         <main className="max-w-7xl mx-auto px-6 py-10">
           <Routes>
-            <Route path="/" element={<Navigate to="/vehiculos" replace />} />
+            <Route path="/" element={<Inicio />} />
 
             <Route path="/vehiculos" element={<Vehiculos />} />
             <Route path="/vehiculos/:id" element={<VehiculoDetalle  />} />
