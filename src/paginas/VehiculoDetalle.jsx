@@ -57,7 +57,14 @@ export default function VehiculoDetalle() {
             </h1>
           </div>
 
-          {/* Chips: wrap en móvil */}
+        </div>
+
+        {/* Precio + CTA */}
+        <div className="mt-5 sm:mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="text-2xl sm:text-3xl font-bold text-[#B68C5A]">
+            ₡{vehiculo.precio.toLocaleString()}
+          </div>
+{/* Chips: wrap en móvil */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full px-3 py-1 text-xs border border-black/10 bg-black/5 text-black/70">
               {vehiculo.estado}
@@ -66,27 +73,7 @@ export default function VehiculoDetalle() {
               {vehiculo.origen}
             </span>
           </div>
-        </div>
-
-        {/* Precio + CTA */}
-        <div className="mt-5 sm:mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div className="text-2xl sm:text-3xl font-bold text-[#B68C5A]">
-            ₡{vehiculo.precio.toLocaleString()}
-          </div>
-
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noreferrer"
-            className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#56514D] text-white px-5 py-3 font-semibold hover:opacity-95 transition shadow-sm"
-          >
-            <img
-              src="/redes/WhatsApp.png"
-              alt="WhatsApp"
-              className="h-5 w-5"
-            />
-            Consultar por WhatsApp
-          </a>
+          
         </div>
 
         {/* Cuerpo */}
@@ -179,6 +166,19 @@ export default function VehiculoDetalle() {
               Volver al catálogo
             </Link>
           </aside>
+          <a
+            href={waLink}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#56514D] text-white px-5 py-3 font-semibold hover:opacity-95 transition shadow-sm"
+          >
+            <img
+              src="/redes/WhatsApp.png"
+              alt="WhatsApp"
+              className="h-5 w-5"
+            />
+            Consultar por WhatsApp
+          </a>
         </div>
       </div>
     </section>

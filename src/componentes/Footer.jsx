@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#56514D] text-white w-full border-t border-white/10">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         {/* ===== DESKTOP ===== */}
         <div className="hidden md:grid grid-cols-3 gap-10 text-center items-start">
           {/* Marca */}
@@ -140,7 +140,7 @@ export default function Footer() {
 
             {/* Información */}
             <button onClick={() => toggle("info")} className={rowBtn}>
-              <span className="font-semibold">Información</span>
+              <span className="font-semibold">Horario</span>
               <span className="text-white/70">{open === "info" ? "−" : "+"}</span>
             </button>
 
