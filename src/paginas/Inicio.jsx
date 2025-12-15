@@ -51,6 +51,23 @@ export default function Inicio() {
         return qs ? `/vehiculos?${qs}` : "/vehiculos"
     }, [marca, anio, transmision])
 
+    // ===== VEHÍCULOS FILTRADOS EN INICIO =====
+    const filtradosInicio = useMemo(() => {
+        const hayFiltros =
+            marca !== "Ninguno" ||
+            anio !== "Ninguno" ||
+            transmision !== "Ninguno"
+
+        if (!hayFiltros) return []
+
+        return vehiculos.filter((v) => {
+            if (marca !== "Ninguno" && v.marca !== marca) return false
+            if (transmision !== "Ninguno" && v.transmision !== transmision) return false
+            if (anio !== "Ninguno" && v.anio !== Number(anio)) return false
+            return true
+        })
+    }, [marca, anio, transmision])
+
     return (
         <div className="space-y-10 sm:space-y-12 lg:space-y-14">
             {/* 1) HERO MÁS GRANDE */}
@@ -126,79 +143,104 @@ export default function Inicio() {
 
 
             {/* 2) FILTRO (MISMO QUE VEHÍCULOS) */}
-            <section className="max-w-7xl mx-auto">
-                <div className="rounded-3xl bg-white border border-black/10 p-5 sm:p-6">
-                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-                        <div>
-                            <h2 className="text-xl sm:text-2xl font-bold">Filtrá rápido</h2>
-                            <p className="text-sm text-black/60 mt-1">
-                                Elegí lo esencial y te llevamos al catálogo.
-                            </p>
-                        </div>
+            <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="rounded-3xl bg-white border border-black/10 p-6">
+          <div className="flex justify-between items-end">
+            <h2 className="text-2xl font-bold">Buscar vehículos</h2>
+            <button
+              onClick={limpiar}
+              className="text-sm font-semibold text-[#56514D] hover:underline"
+            >
+              Limpiar filtros
+            </button>
+          </div>
 
-                        <button
-                            onClick={limpiar}
-                            className="text-sm font-semibold text-[#56514D] hover:underline self-start sm:self-auto"
-                        >
-                            Limpiar filtros
-                        </button>
-                    </div>
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <p className={labelClass}>Marca</p>
+              <select
+                value={marca}
+                onChange={(e) => setMarca(e.target.value)}
+                className={`${selectClass} mt-2`}
+              >
+                {marcas.map((m) => (
+                  <option key={m}>{m}</option>
+                ))}
+              </select>
+            </div>
 
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <div>
-                            <p className={labelClass}>Marca</p>
-                            <select
-                                value={marca}
-                                onChange={(e) => setMarca(e.target.value)}
-                                className={`${selectClass} mt-2`}
-                            >
-                                {marcas.map((m) => (
-                                    <option key={m} value={m}>{m}</option>
-                                ))}
-                            </select>
-                        </div>
+            <div>
+              <p className={labelClass}>Año</p>
+              <select
+                value={anio}
+                onChange={(e) => setAnio(e.target.value)}
+                className={`${selectClass} mt-2`}
+              >
+                {anios.map((a) => (
+                  <option key={a}>{a}</option>
+                ))}
+              </select>
+            </div>
 
-                        <div>
-                            <p className={labelClass}>Año</p>
-                            <select
-                                value={anio}
-                                onChange={(e) => setAnio(e.target.value)}
-                                className={`${selectClass} mt-2`}
-                            >
-                                {anios.map((a) => (
-                                    <option key={a} value={a}>{a}</option>
-                                ))}
-                            </select>
-                        </div>
+            <div>
+              <p className={labelClass}>Transmisión</p>
+              <select
+                value={transmision}
+                onChange={(e) => setTransmision(e.target.value)}
+                className={`${selectClass} mt-2`}
+              >
+                {transmisiones.map((t) => (
+                  <option key={t}>{t}</option>
+                ))}
+              </select>
+            </div>
+          </div>
 
-                        <div>
-                            <p className={labelClass}>Transmisión</p>
-                            <select
-                                value={transmision}
-                                onChange={(e) => setTransmision(e.target.value)}
-                                className={`${selectClass} mt-2`}
-                            >
-                                {transmisiones.map((t) => (
-                                    <option key={t} value={t}>{t}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
+          <div className="mt-5 flex justify-center items-center">
+            <Link
+              to={catalogLink}
+              className="px-5 py-3 rounded-xl bg-[#B68C5A] text-white font-semibold"
+            >
+              Ir al catálogo
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                    <div className="mt-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                        <p className="text-sm text-black/60">
-                            “Ninguno” = sin filtro
-                        </p>
+      {/* =========================
+          RESULTADOS DEL FILTRO
+      ========================== */}
+      {filtradosInicio.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6">
+          <p className="text-sm text-black/60 mb-4">
+            Mostrando <b>{filtradosInicio.length}</b>{" "}
+            {filtradosInicio.length === 1 ? "vehículo" : "vehículos"}
+          </p>
 
-                        <Link
-                            to={catalogLink}
-                            className="rounded-2xl bg-[#B68C5A] text-white px-5 py-3 flex items-center justify-center font-semibold hover:opacity-90 transition w-full sm:w-auto"
-                        >
-                            Ir al catálogo
-                        </Link>
-                    </div>
-                </div>
-            </section>
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {filtradosInicio.map((v) => (
+              <CardVehiculo key={v.id} vehiculo={v} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {(marca !== "Ninguno" || anio !== "Ninguno" || transmision !== "Ninguno") &&
+        filtradosInicio.length === 0 && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="rounded-3xl bg-white border border-black/10 p-8 text-center">
+              <p className="text-black/60">
+                No hay vehículos con esos filtros.
+              </p>
+              <button
+                onClick={limpiar}
+                className="mt-4 font-semibold text-[#56514D] hover:underline"
+              >
+                Limpiar filtros
+              </button>
+            </div>
+          </section>
+        )}
 
             {/* 3) INFO DETALLADA + HISTORIA */}
             <section className="max-w-7xl mx-auto">
