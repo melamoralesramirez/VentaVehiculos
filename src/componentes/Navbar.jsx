@@ -118,7 +118,7 @@ export default function Navbar() {
         <aside
           className={[
             "absolute top-0 right-0 h-full w-[85%] max-w-sm",
-            "bg-[#56514D] border-l border-white/10 shadow-2xl",
+            "bg-[#56514D]/95 backdrop-blur border-l border-white/10 shadow-2xl",
             "transition-transform duration-300 ease-out",
             open ? "translate-x-0" : "translate-x-full",
           ].join(" ")}
