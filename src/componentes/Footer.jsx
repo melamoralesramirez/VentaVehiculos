@@ -11,7 +11,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#56514D] text-white w-full border-t border-white/10">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-
         {/* ===== DESKTOP ===== */}
         <div className="hidden md:grid grid-cols-3 gap-10 text-center items-start">
           {/* Marca */}
@@ -49,7 +48,7 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* WhatsApp */}
+            {/* WhatsApp 1 */}
             <a
               href="https://wa.me/50684944394"
               target="_blank"
@@ -60,6 +59,7 @@ export default function Footer() {
               <span className="text-sm">+506 8494-4394</span>
             </a>
 
+            {/* WhatsApp 2 */}
             <a
               href="https://wa.me/50677777777"
               target="_blank"
@@ -77,9 +77,6 @@ export default function Footer() {
             <p className="text-sm text-white/60 mb-4">
               🕒 Lun–Sáb · 8:00am – 6:00pm
             </p>
-
-            <h4 className="text-sm font-semibold mb-2">Ubicación</h4>
-            <p className="text-sm text-white/60">📍 Cartago, Costa Rica</p>
           </div>
         </div>
 
@@ -96,16 +93,6 @@ export default function Footer() {
             <p className="text-white/70 text-sm">
               Venta de vehículos • Costa Rica
             </p>
-
-            {/* mini CTA */}
-            <a
-              href="https://wa.me/50684944394"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-white text-[#56514D] font-semibold px-4 py-3 hover:opacity-90 transition"
-            >
-              Escribir por WhatsApp
-            </a>
           </div>
 
           {/* Acordeones */}
@@ -160,7 +147,6 @@ export default function Footer() {
             {open === "info" && (
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center text-white/75">
                 <p className="text-sm">🕒 Lun–Sáb · 8:00am – 6:00pm</p>
-                <p className="text-sm mt-2">📍 Cartago, Costa Rica</p>
               </div>
             )}
           </div>
