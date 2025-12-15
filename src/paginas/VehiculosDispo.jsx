@@ -25,13 +25,16 @@ export default function Vehiculos() {
   )
 
   const filtrados = useMemo(() => {
-    return vehiculos.filter((v) => {
-      if (marca !== "Ninguno" && v.marca !== marca) return false
-      if (transmision !== "Ninguno" && v.transmision !== transmision) return false
-      if (anio !== "Ninguno" && v.anio !== Number(anio)) return false
-      return true
-    })
+    return vehiculos
+      .filter(v => v.condicion === "Disponible") // ✅ SOLO DISPONIBLES
+      .filter((v) => {
+        if (marca !== "Ninguno" && v.marca !== marca) return false
+        if (transmision !== "Ninguno" && v.transmision !== transmision) return false
+        if (anio !== "Ninguno" && v.anio !== Number(anio)) return false
+        return true
+      })
   }, [marca, transmision, anio])
+
 
   const limpiar = () => {
     setMarca("Ninguno")
@@ -107,7 +110,7 @@ export default function Vehiculos() {
         {/* Mostrando X vehículos (en OTRO lugar) */}
         <div className="mt-4 flex items-center justify-between text-sm text-black/60">
           <span>
-           Mostrando <b className="text-black">{filtrados.length}</b>{" "}
+            Mostrando <b className="text-black">{filtrados.length}</b>{" "}
             {filtrados.length === 1 ? "vehículo" : "vehículos"} disponibles
           </span>
 

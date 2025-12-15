@@ -2,31 +2,27 @@ export const vehiculos = [
   {
     id: 1,
 
-    // Identidad
     marca: "Toyota",
     modelo: "Corolla",
     anio: 2018,
 
-    // Precio / uso
-    precio: 11500,        // número (sin símbolos) para poder ordenar/filtrar
-    kilometraje: 85000,   // número
+    precio: 11500,        
+    kilometraje: 85000,   
 
-    // Mecánica
     transmision: "Automática",
     combustible: "Gasolina",
     motor: "1.8L",
     traccion: "FWD",
 
-    // Estado y carrocería
     color: "Blanco",
-    estado: "Nuevo",       // Excelente | Bueno | Regular | Nuevo
+    estado: "Nuevo",       // Usado | Nuevo
     puertas: 4,
     origen: "Importado",       // Importado | Nacional
 
-    // Media
-    imagen: "/vehiculos/vehiculo1.jpg", // recomendado: guardarlas en public/vehiculos/
+    condicion: "Disponible", // Disponible | Vendido
 
-    // Detalles para la página del carro
+    imagen: "/vehiculos/vehiculo1.jpg", 
+
     descripcion: "Sedán económico y confiable, ideal para ciudad.",
     caracteristicas: [
       "A/C",
@@ -53,6 +49,7 @@ export const vehiculos = [
     estado: "Usado",
     puertas: 4,
     origen: "Nacional",
+    condicion: "Vendido",
     imagen: "/vehiculos/vehiculo2.jpg",
     descripcion: "Diseño deportivo, cómodo y con buen rendimiento.",
     caracteristicas: [
@@ -61,6 +58,60 @@ export const vehiculos = [
       "Bluetooth",
       "Cámara reversa",
       "Llantas nuevas",
+    ],
+  },
+
+  {
+    id: 3,
+    marca: "Hyundai",
+    modelo: "Tucson",
+    anio: 2020,
+    precio: 17800,
+    kilometraje: 54000,
+    transmision: "Automática",
+    combustible: "Gasolina",
+    motor: "2.0L",
+    traccion: "AWD",
+    color: "Negro",
+    estado: "Usado",
+    puertas: 5,
+    origen: "Nacional",
+    condicion: "Disponible",
+    imagen: "/vehiculos/vehiculo3.jpg",
+    descripcion: "SUV espacioso, cómodo y seguro, ideal para familia.",
+    caracteristicas: [
+      "A/C",
+      "Pantalla táctil",
+      "Cámara reversa",
+      "Sensores de parqueo",
+      "Control de estabilidad",
+    ],
+  },
+
+  // ===== NUEVO VENDIDO =====
+  {
+    id: 4,
+    marca: "Nissan",
+    modelo: "Sentra",
+    anio: 2017,
+    precio: 9800,
+    kilometraje: 96000,
+    transmision: "Manual",
+    combustible: "Gasolina",
+    motor: "1.8L",
+    traccion: "FWD",
+    color: "Plata",
+    estado: "Nuevo",
+    puertas: 4,
+    origen: "Importado",
+    condicion: "Vendido",
+    imagen: "/vehiculos/vehiculo4.jpg",
+    descripcion: "Sedán confiable y económico, muy rendidor.",
+    caracteristicas: [
+      "A/C",
+      "Bluetooth",
+      "Vidrios eléctricos",
+      "Radio USB",
     ],
   },
 ]

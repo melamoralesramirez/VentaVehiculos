@@ -11,9 +11,15 @@ export default function VehiculoDetalle() {
     : ""
 
   const waLink = useMemo(() => {
-    const msg = encodeURIComponent(`Hola, me interesa el ${titulo}. ¿Sigue disponible?`)
+    const msg = encodeURIComponent(
+      vehiculo?.condicion === "Vendido"
+        ? `Hola, vi el ${titulo}. ¿Tienen uno similar disponible?`
+        : `Hola, me interesa el ${titulo}. ¿Sigue disponible?`
+    )
+
     return `https://wa.me/50684944394?text=${msg}`
-  }, [titulo])
+  }, [vehiculo, titulo])
+
 
   if (!vehiculo) {
     return (
@@ -64,7 +70,7 @@ export default function VehiculoDetalle() {
           <div className="text-2xl sm:text-3xl font-bold text-[#B68C5A]">
             ₡{vehiculo.precio.toLocaleString()}
           </div>
-{/* Chips: wrap en móvil */}
+          {/* Chips: wrap en móvil */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full px-3 py-1 text-xs border border-black/10 bg-black/5 text-black/70">
               {vehiculo.estado}
@@ -73,7 +79,7 @@ export default function VehiculoDetalle() {
               {vehiculo.origen}
             </span>
           </div>
-          
+
         </div>
 
         {/* Cuerpo */}
