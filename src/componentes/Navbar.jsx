@@ -34,7 +34,7 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 bg-[#56514D]/95 backdrop-blur border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-[#56514D] border-b border-white/10">
       {/* Barra superior */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
         {/* Logo + Nombre */}
@@ -118,7 +118,7 @@ export default function Navbar() {
         <aside
           className={[
             "absolute top-0 right-0 h-full w-[85%] max-w-sm",
-            "bg-[#56514D]/95 backdrop-blur border-l border-white/10 shadow-2xl",
+            "bg-[#56514D] border-l border-white/10 shadow-2xl",
             "transition-transform duration-300 ease-out",
             open ? "translate-x-0" : "translate-x-full",
           ].join(" ")}
