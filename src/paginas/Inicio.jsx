@@ -98,7 +98,7 @@ export default function Inicio() {
                         </h1>
 
                         <p className="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl">
-                            Aquí encontrás vehículos de calidad,si alguno te interesa, escribinos por WhatsApp y coordinamos rápido.
+                            Aquí encontrás vehículos de calidad,si alguno te interesa, escribinos por WhatsApp y coordinamos.
                         </p>
 
                         {/* Botones */}
