@@ -19,7 +19,7 @@ export const vehiculos = [
 
     // Estado y carrocería
     color: "Blanco",
-    estado: "Excelente",       // Excelente | Bueno | Regular | Nuevo
+    estado: "Nuevo",       // Excelente | Bueno | Regular | Nuevo
     puertas: 4,
     origen: "Importado",       // Importado | Nacional
 
@@ -50,7 +50,7 @@ export const vehiculos = [
     motor: "2.0L",
     traccion: "FWD",
     color: "Gris",
-    estado: "Muy bueno",
+    estado: "Usado",
     puertas: 4,
     origen: "Nacional",
     imagen: "/vehiculos/vehiculo2.jpg",

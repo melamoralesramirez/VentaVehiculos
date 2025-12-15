@@ -8,7 +8,6 @@ const links = [
   { label: "Ubicación", to: "/ubicacion" },
   { label: "Vehículos Vendidos", to: "/vendidos" },
   { label: "Clientes", to: "/clientes" },
-  { label: "Nuestra Historia", to: "/historia" },
 ]
 
 export default function Navbar() {

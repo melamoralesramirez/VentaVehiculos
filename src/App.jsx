@@ -9,7 +9,6 @@ import Promociones from './paginas/Promociones'
 import Ubicacion from './paginas/Ubicacion'
 import Vendidos from './paginas/Vendidos'
 import Clientes from './paginas/Clientes'
-import Historia from './paginas/Historia'
 
 export default function App() {
   return (
@@ -26,7 +25,6 @@ export default function App() {
             <Route path="/ubicacion" element={<Ubicacion />} />
             <Route path="/vendidos" element={<Vendidos />} />
             <Route path="/clientes" element={<Clientes />} />
-            <Route path="/historia" element={<Historia />} />
           </Routes>
         </main>
         <Footer />
