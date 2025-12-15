@@ -4,9 +4,14 @@ export default function Footer() {
   const [open, setOpen] = useState(null)
   const toggle = (section) => setOpen(open === section ? null : section)
 
+  const rowBtn =
+    "w-full flex items-center justify-between rounded-2xl px-4 py-4 " +
+    "bg-white/5 border border-white/10 hover:bg-white/10 transition"
+
   return (
     <footer className="bg-[#56514D] text-white w-full border-t border-white/10">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+
         {/* ===== DESKTOP ===== */}
         <div className="hidden md:grid grid-cols-3 gap-10 text-center items-start">
           {/* Marca */}
@@ -14,7 +19,7 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="Autos Doña Carmen"
-              className="h-12 w-12 rounded-full object-cover"
+              className="h-12 w-12 rounded-full object-cover ring-2 ring-white/10"
             />
             <h3 className="text-base font-semibold">Nombre</h3>
             <p className="text-sm text-white/70">Venta de vehículos</p>
@@ -44,7 +49,7 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* WhatsApp 1 */}
+            {/* WhatsApp */}
             <a
               href="https://wa.me/50684944394"
               target="_blank"
@@ -55,7 +60,6 @@ export default function Footer() {
               <span className="text-sm">+506 8494-4394</span>
             </a>
 
-            {/* WhatsApp 2 */}
             <a
               href="https://wa.me/50677777777"
               target="_blank"
@@ -79,84 +83,87 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ===== MÓVIL ===== */}
-        <div className="md:hidden space-y-4 text-sm">
-          {/* Marca */}
-          <div className="flex flex-col items-center gap-2">
-            <img src="/logo.png" alt="Autos Doña Carmen" className="h-12 w-12 rounded-full" />
-            <p className="font-semibold">Nombre</p>
-            <p className="text-white/70 text-xs">Venta de vehículos · Costa Rica</p>
+        {/* ===== MÓVIL (MEJORADO) ===== */}
+        <div className="md:hidden">
+          {/* Cabecera */}
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center">
+            <img
+              src="/logo.png"
+              alt="Autos Doña Carmen"
+              className="h-14 w-14 rounded-full mx-auto object-cover ring-2 ring-white/10"
+            />
+            <p className="mt-3 font-semibold text-lg">Nombre</p>
+            <p className="text-white/70 text-sm">
+              Venta de vehículos • Costa Rica
+            </p>
+
+            {/* mini CTA */}
+            <a
+              href="https://wa.me/50684944394"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-white text-[#56514D] font-semibold px-4 py-3 hover:opacity-90 transition"
+            >
+              Escribir por WhatsApp
+            </a>
           </div>
 
-          {/* Acordeón: Contactos */}
-          <button
-            onClick={() => toggle("contactos")}
-            className="w-full flex justify-between items-center py-3 border-t border-white/10"
-          >
-            <span className="font-semibold">Contactos</span>
-            <span>{open === "contactos" ? "−" : "+"}</span>
-          </button>
+          {/* Acordeones */}
+          <div className="mt-5 space-y-3">
+            {/* Contactos */}
+            <button onClick={() => toggle("contactos")} className={rowBtn}>
+              <span className="font-semibold">Contactos</span>
+              <span className="text-white/70">{open === "contactos" ? "−" : "+"}</span>
+            </button>
 
-          {open === "contactos" && (
-            <div className="flex flex-col items-center gap-3 pb-3 text-white/70">
-              {/* Redes */}
-              <div className="flex items-center gap-4">
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                  <img
-                    src="/redes/Instragram.png"
-                    alt="Instagram"
-                    className="h-7 w-7 hover:scale-110 transition"
-                  />
-                </a>
+            {open === "contactos" && (
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <div className="flex justify-center gap-4">
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                    <img src="/redes/Instragram.png" alt="Instagram" className="h-8 w-8" />
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                    <img src="/redes/Facebook.png" alt="Facebook" className="h-8 w-8" />
+                  </a>
+                </div>
 
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                  <img
-                    src="/redes/Facebook.png"
-                    alt="Facebook"
-                    className="h-7 w-7 hover:scale-110 transition"
-                  />
-                </a>
+                <div className="mt-4 space-y-3">
+                  <a
+                    href="https://wa.me/50684944394"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-white/85 hover:bg-white/10 transition"
+                  >
+                    <img src="/redes/WhatsApp.png" alt="WhatsApp" className="h-6 w-6" />
+                    <span className="text-sm font-medium">+506 8494-4394</span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/50677777777"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-white/85 hover:bg-white/10 transition"
+                  >
+                    <img src="/redes/WhatsApp.png" alt="WhatsApp" className="h-6 w-6" />
+                    <span className="text-sm font-medium">+506 7777-7777</span>
+                  </a>
+                </div>
               </div>
+            )}
 
-              {/* WhatsApp 1 */}
-              <a
-                href="https://wa.me/50684944394"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-white transition"
-              >
-                <img src="/redes/WhatsApp.png" alt="WhatsApp" className="h-6 w-6" />
-                <span className="text-sm">+506 8494-4394</span>
-              </a>
+            {/* Información */}
+            <button onClick={() => toggle("info")} className={rowBtn}>
+              <span className="font-semibold">Información</span>
+              <span className="text-white/70">{open === "info" ? "−" : "+"}</span>
+            </button>
 
-              {/* WhatsApp 2 */}
-              <a
-                href="https://wa.me/50677777777"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-white transition"
-              >
-                <img src="/redes/WhatsApp.png" alt="WhatsApp" className="h-6 w-6" />
-                <span className="text-sm">+506 7777-7777</span>
-              </a>
-            </div>
-          )}
-
-          {/* Acordeón: Info */}
-          <button
-            onClick={() => toggle("info")}
-            className="w-full flex justify-between items-center py-3 border-t border-white/10"
-          >
-            <span className="font-semibold">Información</span>
-            <span>{open === "info" ? "−" : "+"}</span>
-          </button>
-
-          {open === "info" && (
-            <div className="text-center pb-3 text-white/70">
-              <p>🕒 Lun–Sáb · 8:00am – 6:00pm</p>
-              <p>📍 Cartago, Costa Rica</p>
-            </div>
-          )}
+            {open === "info" && (
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center text-white/75">
+                <p className="text-sm">🕒 Lun–Sáb · 8:00am – 6:00pm</p>
+                <p className="text-sm mt-2">📍 Cartago, Costa Rica</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Línea inferior */}

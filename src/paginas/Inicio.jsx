@@ -144,103 +144,107 @@ export default function Inicio() {
 
             {/* 2) FILTRO (MISMO QUE VEHÍCULOS) */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-3xl bg-white border border-black/10 p-6">
-          <div className="flex justify-between items-end">
-            <h2 className="text-2xl font-bold">Buscar vehículos</h2>
-            <button
-              onClick={limpiar}
-              className="text-sm font-semibold text-[#56514D] hover:underline"
-            >
-              Limpiar filtros
-            </button>
-          </div>
+                <div className="rounded-3xl bg-white border border-black/10 p-6">
+                    <div className="flex justify-between items-end">
+                        <h2 className="text-2xl font-bold">Buscar vehículos</h2>
+                    </div>
 
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div>
-              <p className={labelClass}>Marca</p>
-              <select
-                value={marca}
-                onChange={(e) => setMarca(e.target.value)}
-                className={`${selectClass} mt-2`}
-              >
-                {marcas.map((m) => (
-                  <option key={m}>{m}</option>
-                ))}
-              </select>
-            </div>
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <p className={labelClass}>Marca</p>
+                            <select
+                                value={marca}
+                                onChange={(e) => setMarca(e.target.value)}
+                                className={`${selectClass} mt-2`}
+                            >
+                                {marcas.map((m) => (
+                                    <option key={m}>{m}</option>
+                                ))}
+                            </select>
+                        </div>
 
-            <div>
-              <p className={labelClass}>Año</p>
-              <select
-                value={anio}
-                onChange={(e) => setAnio(e.target.value)}
-                className={`${selectClass} mt-2`}
-              >
-                {anios.map((a) => (
-                  <option key={a}>{a}</option>
-                ))}
-              </select>
-            </div>
+                        <div>
+                            <p className={labelClass}>Año</p>
+                            <select
+                                value={anio}
+                                onChange={(e) => setAnio(e.target.value)}
+                                className={`${selectClass} mt-2`}
+                            >
+                                {anios.map((a) => (
+                                    <option key={a}>{a}</option>
+                                ))}
+                            </select>
+                        </div>
 
-            <div>
-              <p className={labelClass}>Transmisión</p>
-              <select
-                value={transmision}
-                onChange={(e) => setTransmision(e.target.value)}
-                className={`${selectClass} mt-2`}
-              >
-                {transmisiones.map((t) => (
-                  <option key={t}>{t}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+                        <div>
+                            <p className={labelClass}>Transmisión</p>
+                            <select
+                                value={transmision}
+                                onChange={(e) => setTransmision(e.target.value)}
+                                className={`${selectClass} mt-2`}
+                            >
+                                {transmisiones.map((t) => (
+                                    <option key={t}>{t}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
 
-          <div className="mt-5 flex justify-center items-center">
-            <Link
-              to={catalogLink}
-              className="px-5 py-3 rounded-xl bg-[#B68C5A] text-white font-semibold"
-            >
-              Ir al catálogo
-            </Link>
-          </div>
-        </div>
-      </section>
+                    <div className="mt-5 flex justify-end items-center">
+                        <button
+                            onClick={limpiar}
+                            className="text-sm font-semibold text-[#56514D] hover:underline"
+                        >
+                            Limpiar filtros
+                        </button>
+                    </div>
 
-      {/* =========================
+
+                    <div className="mt-5 flex justify-center items-center">
+                        <Link
+                            to={catalogLink}
+                            className="px-5 py-3 rounded-xl bg-[#B68C5A] text-white font-semibold"
+                        >
+                            Ir al catálogo
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* =========================
           RESULTADOS DEL FILTRO
       ========================== */}
-      {filtradosInicio.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-sm text-black/60 mb-4">
-            Mostrando <b>{filtradosInicio.length}</b>{" "}
-            {filtradosInicio.length === 1 ? "vehículo" : "vehículos"}
-          </p>
+            {filtradosInicio.length > 0 && (
+                <section className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <p className="text-sm text-black/60 mb-4">
+                        Mostrando <b>{filtradosInicio.length}</b>{" "}
+                        {filtradosInicio.length === 1 ? "vehículo" : "vehículos"}
+                    </p>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {filtradosInicio.map((v) => (
-              <CardVehiculo key={v.id} vehiculo={v} />
-            ))}
-          </div>
-        </section>
-      )}
+                    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                        {filtradosInicio.map((v) => (
+                            <CardVehiculo key={v.id} vehiculo={v} />
+                        ))}
+                    </div>
+                </section>
+            )}
 
-      {(marca !== "Ninguno" || anio !== "Ninguno" || transmision !== "Ninguno") &&
-        filtradosInicio.length === 0 && (
-          <section className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="rounded-3xl bg-white border border-black/10 p-8 text-center">
-              <p className="text-black/60">
-                No hay vehículos con esos filtros.
-              </p>
-              <button
-                onClick={limpiar}
-                className="mt-4 font-semibold text-[#56514D] hover:underline"
-              >
-                Limpiar filtros
-              </button>
-            </div>
-          </section>
-        )}
+            {(marca !== "Ninguno" || anio !== "Ninguno" || transmision !== "Ninguno") &&
+                filtradosInicio.length === 0 && (
+                    <section className="max-w-7xl mx-auto px-4 sm:px-6">
+                        <div className="rounded-3xl bg-white border border-black/10 p-8 text-center">
+                            <p className="text-black/60">
+                                No hay vehículos con esos filtros.
+                            </p>
+                            <button
+                                onClick={limpiar}
+                                className="mt-4 font-semibold text-[#56514D] hover:underline"
+                            >
+                                Limpiar filtros
+                            </button>
+                        </div>
+                    </section>
+                )}
 
             {/* 3) INFO DETALLADA + HISTORIA */}
             <section className="max-w-7xl mx-auto">
