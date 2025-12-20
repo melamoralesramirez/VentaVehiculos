@@ -13,9 +13,9 @@ import Clientes from './paginas/Clientes'
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#FAFAF9] text-black">
+      <div className="min-h-screen bg-[#FAFAF9] text-black flex flex-col">
         <Navbar />
-        <main className="max-w-7xl mx-auto px-6 py-10">
+         <main className="flex-1 w-full">
           <Routes>
             <Route path="/" element={<Inicio />} />
 

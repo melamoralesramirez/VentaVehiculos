@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     [
-      "px-3 py-2 rounded-md transition",
+      "px-3 py-2 rounded-md transition whitespace-nowrap",
       "hover:bg-white/10 hover:text-white",
       isActive ? "text-white bg-white/10" : "text-white/75",
     ].join(" ")
@@ -34,10 +34,10 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 bg-[#56514D] border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-white/10">
       {/* Barra superior */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-        {/* Logo + Nombre */}
+        {/* Izquierda: Logo + Nombre */}
         <Link
           to="/"
           className="flex items-center gap-3 shrink-0"
@@ -58,20 +58,18 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex flex-1 justify-center">
-          <div className="flex items-center gap-2 text-sm">
-            {links.map(({ label, to }) => (
-              <NavLink key={to} to={to} className={linkClass}>
-                {label}
-              </NavLink>
-            ))}
-          </div>
+        {/* Derecha: Menú (desktop) */}
+        <nav className="hidden md:flex items-center gap-2 text-sm">
+          {links.map(({ label, to }) => (
+            <NavLink key={to} to={to} className={linkClass}>
+              {label}
+            </NavLink>
+          ))}
         </nav>
 
         {/* Botón móvil */}
         <button
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md hover:bg-white/10 transition text-white"
+          className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md hover:bg-white/10 transition text-white shrink-0"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
@@ -109,7 +107,7 @@ export default function Navbar() {
         <div
           onClick={() => setOpen(false)}
           className={[
-            "absolute inset-0 bg-black/40 transition-opacity",
+            "absolute inset-0 bg-black/50 transition-opacity",
             open ? "opacity-100" : "opacity-0",
           ].join(" ")}
         />
@@ -118,7 +116,7 @@ export default function Navbar() {
         <aside
           className={[
             "absolute top-0 right-0 h-full w-[85%] max-w-sm",
-            "bg-[#56514D] border-l border-white/10 shadow-2xl",
+            "bg-black border-l border-white/10 shadow-2xl",
             "transition-transform duration-300 ease-out",
             open ? "translate-x-0" : "translate-x-full",
           ].join(" ")}

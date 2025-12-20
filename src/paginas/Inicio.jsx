@@ -70,42 +70,40 @@ export default function Inicio() {
 
     return (
         <div className="space-y-10 sm:space-y-12 lg:space-y-14">
-            {/* 1) HERO MÁS GRANDE */}
-            {/* 1) HERO NUEVO (banner con imagen de fondo, más limpio) */}
-            <section className="max-w-7xl mx-auto">
-                <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-black shadow-sm">
-                    {/* Imagen de fondo + efecto */}
-                    <img
-                        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80"
-                        alt="Autos Doña Carmen"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 hover:scale-[1.03]"
-                        loading="lazy"
-                    />
+            <section className="relative w-full h-[85vh] md:h-[92vh] overflow-hidden">
+                <img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80"
+                    alt="Autos Doña Carmen"
+                    className="absolute inset-0 h-full w-full object-cover"
+                />
 
-                    {/* Overlay para contraste */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/10" />
+                {/* overlays para contraste */}
+                <div className="absolute inset-0 bg-black/55" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/70" />
 
-                    {/* Contenido */}
-                    <div className="relative p-7 sm:p-10 md:p-12">
-                        <p className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white/85">
-                            <span className="h-2 w-2 rounded-full bg-[#B68C5A]" />
-                            Autos usados en Costa Rica
+                {/* contenido centrado */}
+                <div className="relative z-10 h-full flex items-center justify-center px-6">
+                    <div className="text-center max-w-5xl">
+                        <p className="text-white/80 text-sm md:text-base">
+                            Autos usados • Costa Rica
                         </p>
 
-                        <h1 className="mt-3 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight max-w-3xl">
+                        <h1 className="mt-4 text-white font-extrabold tracking-tight leading-[1.05]
+                     text-4xl sm:text-5xl md:text-7xl">
                             Encontrá tu próximo carro{" "}
                             <span className="text-[#B68C5A]">sin complicarte</span>
                         </h1>
 
-                        <p className="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl">
-                            Aquí encontrás vehículos de calidad,si alguno te interesa, escribinos por WhatsApp y coordinamos.
+                        <p className="mt-5 text-white/85 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+                            Catálogo actualizado, detalles claros y atención rápida por WhatsApp.
+                            Coordinamos visita y te damos toda la info sin vueltas.
                         </p>
 
-                        {/* Botones */}
-                        <div className="mt-7 flex flex-col sm:flex-row gap-3 max-w-xl">
+                        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
                             <Link
                                 to="/vehiculos"
-                                className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-[#B68C5A] text-white font-semibold hover:opacity-90 transition"
+                                className="px-6 py-3 rounded-xl font-semibold
+                     bg-[#B68C5A] text-white hover:opacity-90 transition"
                             >
                                 Ver vehículos disponibles
                             </Link>
@@ -114,33 +112,30 @@ export default function Inicio() {
                                 href="https://wa.me/50684944394"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-white/10 text-white border border-white/15 hover:bg-white/15 transition font-semibold backdrop-blur"
+                                className="px-6 py-3 rounded-xl font-semibold
+                     bg-white/10 text-white border border-white/15
+                     hover:bg-white/15 transition backdrop-blur"
                             >
                                 Consultar por WhatsApp
                             </a>
                         </div>
-
-                        {/* Stats (solo lo que pediste mantener: catálogo) */}
-                        <div className="mt-8 flex flex-wrap gap-3">
-                            <div className="rounded-2xl bg-white/10 border border-white/15 px-4 py-3 backdrop-blur">
-                                <p className="text-white text-xl font-bold">Vehículos en catálogo</p>
-                                <p className="text-white/75 text-xs text-center">{vehiculos.length}</p>
-                            </div>
-
-                            <div className="rounded-2xl bg-white/10 border border-white/15 px-4 py-3 backdrop-blur">
-                                <p className="text-white text-xl font-bold">Ubicación</p>
-                                <p className="text-white/75 text-xs text-center">Cartago</p>
-                            </div>
-
-                            <div className="rounded-2xl bg-white/10 border border-white/15 px-4 py-3 backdrop-blur">
-                                <p className="text-white text-xl font-bold">Horario </p>
-                                <p className="text-white/75 text-xs text-center">Lun–Sáb</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </section>
 
+                {/* flecha tipo "descubre más" */}
+                <a
+                    href="#contenido"
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20
+               text-white/80 text-xs sm:text-sm font-semibold
+               flex flex-col items-center gap-2 hover:text-white transition"
+                >
+                    <span className="tracking-widest">DESCUBRÍ MÁS</span>
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full
+                     border border-white/20 bg-black/20 backdrop-blur">
+                        ↓
+                    </span>
+                </a>
+            </section>
 
             {/* 2) FILTRO (MISMO QUE VEHÍCULOS) */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -316,6 +311,7 @@ export default function Inicio() {
                     </a>
                 </div>
             </section>
+            <div id="contenido" />
         </div>
     )
 }
