@@ -34,7 +34,7 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-black md:bg-black/95 md:backdrop-blur border-b border-white/10">
       {/* Barra superior */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
         {/* Izquierda: Logo + Nombre */}

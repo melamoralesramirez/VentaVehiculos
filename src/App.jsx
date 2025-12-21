@@ -15,17 +15,19 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-[#FAFAF9] text-black flex flex-col">
         <Navbar />
-         <main className="flex-1 w-full">
-          <Routes>
-            <Route path="/" element={<Inicio />} />
+        <main className="flex-1 w-full">
+          <div className="pt-8 pb-16">
+            <Routes>
+              <Route path="/" element={<Inicio />} />
 
-            <Route path="/vehiculos" element={<Vehiculos />} />
-            <Route path="/vehiculos/:id" element={<VehiculoDetalle  />} />
-            <Route path="/promociones" element={<Promociones />} />
-            <Route path="/ubicacion" element={<Ubicacion />} />
-            <Route path="/vendidos" element={<Vendidos />} />
-            <Route path="/clientes" element={<Clientes />} />
-          </Routes>
+              <Route path="/vehiculos" element={<Vehiculos />} />
+              <Route path="/vehiculos/:id" element={<VehiculoDetalle />} />
+              <Route path="/promociones" element={<Promociones />} />
+              <Route path="/ubicacion" element={<Ubicacion />} />
+              <Route path="/vendidos" element={<Vendidos />} />
+              <Route path="/clientes" element={<Clientes />} />
+            </Routes>
+          </div>
         </main>
         <Footer />
       </div>

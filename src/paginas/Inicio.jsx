@@ -70,7 +70,7 @@ export default function Inicio() {
 
     return (
         <div className="space-y-10 sm:space-y-12 lg:space-y-14">
-            <section className="relative w-full h-[85vh] md:h-[92vh] overflow-hidden">
+            <section className="relative h-[85vh] md:h-[92vh] overflow-hidden w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] -mt-8">
                 <img
                     src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80"
                     alt="Autos Doña Carmen"
@@ -95,8 +95,8 @@ export default function Inicio() {
                         </h1>
 
                         <p className="mt-5 text-white/85 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
-                            Catálogo actualizado, detalles claros y atención rápida por WhatsApp.
-                            Coordinamos visita y te damos toda la info sin vueltas.
+                            Catálogo actualizado con información detallada y atención personalizada por WhatsApp.
+                            Coordinamos visitas y resolvemos tus consultas de forma clara y transparente.
                         </p>
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -130,10 +130,11 @@ export default function Inicio() {
                flex flex-col items-center gap-2 hover:text-white transition"
                 >
                     <span className="tracking-widest">DESCUBRÍ MÁS</span>
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full
-                     border border-white/20 bg-black/20 backdrop-blur">
-                        ↓
+                    <span
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/20 backdrop-blurtext-white text-lg animate-bounce"
+                    >↓
                     </span>
+
                 </a>
             </section>
 
@@ -311,7 +312,6 @@ export default function Inicio() {
                     </a>
                 </div>
             </section>
-            <div id="contenido" />
         </div>
     )
 }
